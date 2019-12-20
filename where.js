@@ -11,15 +11,15 @@ con.connect(function(err) {
 	if (err) throw err;
 	console.log("Connected to the Database!");
 	
-	//SELECT specific data
-	var sql = "SELECT *FROM customers";
+	// Where Clause
+	var sql = "SELECT name FROM customers where id = 2";
 	
 
 	con.query(sql, function(err, result, fields){
 		if (err) throw err;
 		
 
-		console.log(fields[0].name);
+		console.log(result);
 		
 
 
